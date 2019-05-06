@@ -3,7 +3,7 @@ require './multiples'
 
 describe Multiples do
   before do
-    @result             = Multiples.iteration
+    @result = Multiples.iteration
   end
 
   describe '#multiples of' do
