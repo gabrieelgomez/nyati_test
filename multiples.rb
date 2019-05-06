@@ -1,18 +1,22 @@
-class Multiples
+class Integer
+  def multiple_of?(n)
+    modulo(n).zero?
+  end
+end
 
-  def iteration
-    Array(1..100).collect do |number|
-      multiple_of(number)
+class Multiples
+  def self.iteration
+    Array(1..100).map do |number|
+      process(number)
     end
   end
 
-  private
-
-  def multiple_of(number)
-    number.modulo(15).zero? && (return 'FooBar')
-    number.modulo(3).zero? && (return 'Foo')
-    number.modulo(5).zero? && (return 'Bar')
+  def self.process(number)
+    number.multiple_of?(15) && (return 'FooBar')
+    number.multiple_of?(5) && (return 'Bar')
+    number.multiple_of?(3) && (return 'Foo')
     number
   end
-
 end
+
+puts "#{Multiples.iteration}"
